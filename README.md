@@ -2,7 +2,7 @@
 
 [![Build Status](https://dev.azure.com/asrivascs/asrivascs/_apis/build/status/ansrivas.rocketchat-client-rs?branchName=master)](https://dev.azure.com/asrivascs/asrivascs/_build/latest?definitionId=2&branchName=master)
 
-Short Description.
+Send notifications/messages to RocketChat from command-line or from inside your code.
 
 ## Current Stable Version
 
