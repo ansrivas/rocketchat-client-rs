@@ -7,7 +7,7 @@ Short Description.
 ## Current Stable Version
 
 ```
-"0.1.0"
+0.1.1
 ```
 
 ## Installation
@@ -15,7 +15,7 @@ Short Description.
 ### Using cargo
 
 ```bash
-cargo install rocketchat-client-rs
+cargo install rocketchat_client_rs
 ```
 
 ## Test
@@ -27,9 +27,22 @@ To run the tests:
 ## Usage
 
 ## Examples
+- As a command line tool:
+  ```bash
+  $ rocketchat-client --channel "#test-logs" --webhook "https://blah.at.blah-blah-blah.com" --text "hi"
+  ```
 
-```bash
-$ rocketchat_client --channel "#test-logs" --webhook "https://blah.at.blah-blah-blah.com" --text "hi"
+- As a library:
+  ```rust
+  use rocketchat_client_rs::RocketClient;
+
+  fn main() {
+  let _response = RocketClient::new("https://recochat.internal.recogizer.com/hooks/fKTaMGGbWqKQMWta7/rDer5rCYqpTRARsiTJY6tmmA7sEwZzRpwJgspLWXeHmPxPT5")
+      .with_channel("#test-logs")
+      .with_text("Hi world")
+      .with_default_hostname()
+      .execute();
+  }
 ```
 
 ## Documentation
