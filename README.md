@@ -47,9 +47,9 @@ To run the tests:
 
 ## Documentation
 
-```bash
-$ cargo doc --no-deps
-```
+  ```bash
+  $ cargo doc --no-deps
+  ```
 
 ## License
 mit
