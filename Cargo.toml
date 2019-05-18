@@ -20,7 +20,7 @@ name = "rocketchat_client_rs"
 path = "src/lib.rs"
 
 [[bin]]
-name = "rocketchat_client"
+name = "rocketchat-client"
 path = "src/bin.rs"
 
 
