@@ -45,14 +45,14 @@ To run the tests:
   }
 ```
 
-## Documentation
 
-  ```bash
+## Documentation
+  ```
   $ cargo doc --no-deps
   ```
 
 ## License
-mit
+MIT
 
 ## Credits
 The Azure pipeline template has been taken from https://github.com/graphql-rust/juniper here.
