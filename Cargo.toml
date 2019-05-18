@@ -1,0 +1,25 @@
+[package]
+name = "rocketchat_client_rs"
+version = "0.1.0"
+authors = ["Ankur Srivastava <ankur.srivastava@email.de>"]
+description = "Write some description for your project here."
+documentation = "link to the documentation"
+homepage = "link to the homepage"
+repository = "https://github.com/ansrivas/rocketchat_client_rs"
+readme = "README.md"
+keywords = ["some-awesome-keywords"]
+license = "mit"
+categories = ["category keywords"]
+edition="2018"
+
+[dependencies]
+hostname = "0.1.5"
+clap = "2.33.0"
+openssl = { version = "0.10", features = ["vendored"] }
+openssl-probe = "0.1.2"
+env_logger = "^0.5.0"
+reqwest = "0.9.17"
+serde_json = "1.0.39"
+serde = "1.0.91"
+
+[dev-dependencies]
