@@ -132,6 +132,46 @@ impl RocketClient {
         self
     }
 
+    /// Add botname with the message being sent
+    ///
+    /// # Examples
+    /// Basic usage:
+    ///
+    /// ```rust ignore
+    /// use crate::client::RocketClient;
+    /// let client = RocketClient::new("www.facebook.com")
+    ///         .with_channel("#test-logs")
+    ///         .with_botname("some-bot")
+    ///         .execute();
+    /// ```
+    pub fn with_botname<T>(&mut self, botname: T) -> &mut Self
+    where
+        T: Into<Option<String>>,
+    {
+        self.botname = botname.into();
+        self
+    }
+
+    /// Add emoji with the message being sent
+    ///
+    /// # Examples
+    /// Basic usage:
+    ///
+    /// ```rust ignore
+    /// use crate::client::RocketClient;
+    /// let client = RocketClient::new("www.facebook.com")
+    ///         .with_channel("#test-logs")
+    ///         .with_emoji(":sos:")
+    ///         .execute();
+    /// ```
+    pub fn with_emoji<T>(&mut self, emoji: T) -> &mut Self
+    where
+        T: Into<Option<String>>,
+    {
+        self.emoji = emoji.into();
+        self
+    }
+
     /// Execute the builder pattern finally after constructing the object.
     ///
     /// # Examples

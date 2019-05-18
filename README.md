@@ -1,6 +1,6 @@
 # rocketchat-client-rs
 
-[![Build Status](https://travis-ci.org/Ankur Srivastava/%s.svg?branch=master)](https://travis-ci.org/Ankur Srivastava/%s)
+[![Build Status](https://dev.azure.com/asrivascs/asrivascs/_apis/build/status/ansrivas.rocketchat-client-rs?branchName=master)](https://dev.azure.com/asrivascs/asrivascs/_build/latest?definitionId=2&branchName=master)
 
 Short Description.
 
@@ -29,7 +29,7 @@ To run the tests:
 ## Examples
 
 ```bash
-$ cargo run --example simple.rs
+$ rocketchat_client --channel "#test-logs" --webhook "https://blah.at.blah-blah-blah.com" --text "hi"
 ```
 
 ## Documentation
@@ -40,3 +40,6 @@ $ cargo doc --no-deps
 
 ## License
 mit
+
+## Credits
+The Azure pipeline template has been taken from https://github.com/graphql-rust/juniper here.

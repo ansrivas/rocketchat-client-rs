@@ -20,5 +20,5 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-pub mod client;
-use crate::client::RocketClient;
+mod client;
+pub use client::RocketClient;

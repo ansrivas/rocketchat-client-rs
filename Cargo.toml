@@ -2,19 +2,31 @@
 name = "rocketchat_client_rs"
 version = "0.1.0"
 authors = ["Ankur Srivastava <ankur.srivastava@email.de>"]
-description = "Write some description for your project here."
-documentation = "link to the documentation"
-homepage = "link to the homepage"
+description = "Send messages to rocketchat via cli or using library"
+homepage = "https://github.com/sharkdp/fd"
 repository = "https://github.com/ansrivas/rocketchat_client_rs"
 readme = "README.md"
-keywords = ["some-awesome-keywords"]
-license = "mit"
-categories = ["category keywords"]
+keywords = [
+    "rocketchat",
+    "command-line",
+    "tool",
+]
+license = "MIT"
+categories = ["command-line-utilities"]
 edition="2018"
 
+[lib]
+name = "rocketchat_client_rs"
+path = "src/lib.rs"
+
+[[bin]]
+name = "rocketchat_client"
+path = "src/bin.rs"
+
+
 [dependencies]
-hostname = "0.1.5"
 clap = "2.33.0"
+hostname = "0.1.5"
 openssl = { version = "0.10", features = ["vendored"] }
 openssl-probe = "0.1.2"
 env_logger = "^0.5.0"
