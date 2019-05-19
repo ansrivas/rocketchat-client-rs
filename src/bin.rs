@@ -20,51 +20,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-#[macro_use]
-extern crate structopt;
 extern crate rocketchat_client_rs;
 
-use structopt::StructOpt;
 use rocketchat_client_rs::RocketClient;
+use structopt::StructOpt;
 
 /// A simple command line application to send message to RocketChat via webhook-url.
 #[derive(StructOpt, Debug)]
 #[structopt(
-    about = "A simple command line application to send message to RocketChat via webhook-url.",
-    raw(setting = "structopt::clap::AppSettings::ColoredHelp")
+	about = "A simple command line application to send message to RocketChat via webhook-url.",
+	raw(setting = "structopt::clap::AppSettings::ColoredHelp")
 )]
 struct Opt {
-    /// Text message to be sent out.
-    #[structopt(short = "t", long = "text")]
-    text: String,
+	/// Text message to be sent out.
+	#[structopt(short = "t", long = "text")]
+	text: String,
 
-    /// Webhook URL to send this text to.
-    #[structopt(short = "w", long = "webhook")]
-    webhook: String,
+	/// Webhook URL to send this text to.
+	#[structopt(short = "w", long = "webhook")]
+	webhook: String,
 
-    /// Default emoji to show for the bot.
-    #[structopt(short = "e", long = "emoji", default_value = ":sos:")]
-    emoji: String,
+	/// Default emoji to show for the bot.
+	#[structopt(short = "e", long = "emoji", default_value = ":sos:")]
+	emoji: String,
 
-    /// Default username for the bot.
-    #[structopt(short = "b", long = "botname", default_value = "superrocket")]
-    botname: String,
+	/// Default username for the bot.
+	#[structopt(short = "b", long = "botname", default_value = "superrocket")]
+	botname: String,
 
-    /// RocketChat channel to post message to.
-    #[structopt(short = "c", long = "channel")]
-    channel: String,
+	/// RocketChat channel to post message to.
+	#[structopt(short = "c", long = "channel")]
+	channel: String,
 }
 
 fn main() {
-    openssl_probe::init_ssl_cert_env_vars();
-    env_logger::init();
-    let opt = Opt::from_args();
+	openssl_probe::init_ssl_cert_env_vars();
+	env_logger::init();
+	let opt = Opt::from_args();
 
-    let _response = RocketClient::new(opt.webhook)
-        .with_channel(opt.channel)
-        .with_text(opt.text)
-        .with_botname(opt.botname)
-        .with_emoji(opt.emoji)
-        .with_default_hostname()
-        .execute();
+	let _response = RocketClient::new(opt.webhook)
+		.with_channel(opt.channel)
+		.with_text(opt.text)
+		.with_botname(opt.botname)
+		.with_emoji(opt.emoji)
+		.with_default_hostname()
+		.execute();
 }

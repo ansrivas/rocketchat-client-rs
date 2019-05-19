@@ -1,3 +1,6 @@
-
-max_width = 89
 reorder_imports = true
+hard_tabs = true
+max_width = 100
+newline_style = "Unix"
+use_try_shorthand = true
+edition = "2018"

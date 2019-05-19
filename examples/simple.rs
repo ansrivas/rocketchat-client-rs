@@ -24,9 +24,9 @@ extern crate rocketchat_client_rs;
 use rocketchat_client_rs::RocketClient;
 
 fn main() {
-    let _response = RocketClient::new("https://example.com")
-        .with_channel("#test-logs")
-        .with_text("Hi world")
-        .with_default_hostname()
-        .execute();
+	let _response = RocketClient::new("https://example.com")
+		.with_channel("#test-logs")
+		.with_text("Hi world")
+		.with_default_hostname()
+		.execute();
 }
