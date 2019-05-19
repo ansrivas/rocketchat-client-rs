@@ -1,6 +1,6 @@
 [package]
 name = "rocketchat_client_rs"
-version = "0.1.1"
+version = "0.2.0"
 authors = ["Ankur Srivastava <ankur.srivastava@email.de>"]
 description = "Send messages to rocketchat via cli or using library"
 homepage = "https://github.com/sharkdp/fd"
@@ -25,7 +25,7 @@ path = "src/bin.rs"
 
 
 [dependencies]
-clap = "2.33.0"
+structopt = "0.2"
 hostname = "0.1.5"
 openssl = { version = "0.10", features = ["vendored"] }
 openssl-probe = "0.1.2"

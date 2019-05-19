@@ -5,12 +5,6 @@
 
 Send notifications/messages to RocketChat from command-line or from inside your code.
 
-## Current Stable Version
-
-```
-0.1.1
-```
-
 ## Installation
 
 ### Using cargo
