@@ -1,6 +1,6 @@
 [package]
 name = "rocketchat_client_rs"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Ankur Srivastava <ankur.srivastava@email.de>"]
 description = "Send messages to rocketchat via cli or using library"
 homepage = "https://github.com/ansrivas/rocketchat-client-rs"
