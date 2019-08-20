@@ -1,6 +1,6 @@
 # rocketchat-client-rs
 
-[![Build Status](https://dev.azure.com/asrivascs/asrivascs/_apis/build/status/ansrivas.rocketchat-client-rs?branchName=master)](https://dev.azure.com/asrivascs/asrivascs/_build/latest?definitionId=2&branchName=master)
+[![Build Status](https://travis-ci.org/ansrivas/rocketchat-client-rs.svg?branch=master)](https://travis-ci.org/ansrivas/rocketchat-client-rs)
 [![Version info](https://img.shields.io/crates/v/rocketchat_client_rs.svg)](https://crates.io/crates/rocketchat_client_rs)
 [![Docs.rs](https://docs.rs/rocketchat_client_rs/badge.svg)](https://docs.rs/rocketchat_client_rs)
 
