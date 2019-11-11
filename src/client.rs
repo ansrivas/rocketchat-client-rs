@@ -20,10 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-use hostname::get_hostname;
+use hostname;
 use reqwest;
 use serde::{Deserialize, Serialize};
-
+use std::ffi::OsString;
 /// RocketClient represents a minimal rocketchat client which can be used to send text
 /// messages to a given webhook.
 ///
@@ -43,7 +43,7 @@ pub struct RocketClient {
 	emoji: Option<String>,
 	botname: Option<String>,
 	channel: Option<String>,
-	hostname: Option<String>,
+	hostname: Option<OsString>,
 }
 
 impl RocketClient {
@@ -89,7 +89,7 @@ impl RocketClient {
 	/// ```
 	pub fn with_hostname<T>(&mut self, hostname: T) -> &mut Self
 	where
-		T: Into<String>,
+		T: Into<OsString>,
 	{
 		self.hostname = Some(hostname.into());
 		self
@@ -128,7 +128,8 @@ impl RocketClient {
 	///     .execute();
 	/// ```
 	pub fn with_default_hostname(&mut self) -> &mut Self {
-		self.hostname = get_hostname();
+		self.hostname = hostname::get().ok();
+
 		self
 	}
 
