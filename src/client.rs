@@ -211,13 +211,14 @@ impl RocketClient {
 mod tests {
 	use super::*;
 
-	#[test]
-	fn test_execute() {
+	#[tokio::test]
+	async fn test_execute() {
 		let response = RocketClient::new("https://example.com")
 			.with_channel("#test-logs")
 			.with_text("Hi world")
 			.with_default_hostname()
-			.execute();
+			.execute()
+			.await;
 
 		assert!(
 			response.is_err(),

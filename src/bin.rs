@@ -28,7 +28,7 @@ use structopt::StructOpt;
 /// A simple command line application to send message to RocketChat via webhook-url.
 #[derive(StructOpt, Debug)]
 #[structopt(
-	about = "A simple command line application to send message to RocketChat via webhook-url.",
+	about = "A simple command line application to send message to RocketChat via webhook-url."
 )]
 struct Opt {
 	/// Text message to be sent out.
