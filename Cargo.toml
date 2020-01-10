@@ -28,11 +28,12 @@ path = "src/bin.rs"
 [dependencies]
 structopt = "0.3.1"
 hostname = "0.2.0"
+tokio = { version = "0.2", features = ["macros"] }
 openssl = { version = "0.10.24", features = ["vendored"] }
 openssl-probe = "0.1.2"
 env_logger = "0.7.0"
-reqwest = "0.9.19"
+reqwest = {version = "0.10.1", features = ["json"]}
 serde_json = "1.0.40"
-serde = "1.0.99"
+serde = { version = "1.0", default-features = false, features = ["derive"] }
 
 [dev-dependencies]

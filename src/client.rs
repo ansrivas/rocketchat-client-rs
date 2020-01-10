@@ -186,7 +186,7 @@ impl RocketClient {
 	/// 	.with_default_hostname()
 	///     .execute();
 	/// ```
-	pub fn execute(&mut self) -> Result<(), reqwest::Error> {
+	pub async fn execute(&mut self) -> Result<(), reqwest::Error> {
 		let rocket_client = RocketClient {
 			webhook: self.webhook.clone(),
 			channel: self.channel.clone(),
@@ -199,8 +199,10 @@ impl RocketClient {
 		reqwest::Client::new()
 			.post(&rocket_client.webhook)
 			.json(&rocket_client)
-			.send()?
-			.json()?;
+			.send()
+			.await?
+			.json()
+			.await?;
 		Ok(())
 	}
 }
