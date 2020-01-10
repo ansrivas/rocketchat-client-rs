@@ -58,7 +58,7 @@ build_release: clean test install_sccache ## Create a release build
 
 .PHONY : lint
 lint: ## Run tests, fmt and clippy on this
-	cargo test --all && touch src/main.rs && cargo clippy --all && cargo fmt --all -- --check
+	cargo test --all && touch src/bin.rs && cargo clippy --all && cargo fmt --all -- --check
 
 .PHONY : docs
 docs:  ## Generate the docs for this project. Docs are located in target/doc/test_rs

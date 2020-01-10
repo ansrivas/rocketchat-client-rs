@@ -28,8 +28,7 @@ use structopt::StructOpt;
 /// A simple command line application to send message to RocketChat via webhook-url.
 #[derive(StructOpt, Debug)]
 #[structopt(
-	about = "A simple command line application to send message to RocketChat via webhook-url.",
-	raw(setting = "structopt::clap::AppSettings::ColoredHelp")
+	about = "A simple command line application to send message to RocketChat via webhook-url."
 )]
 struct Opt {
 	/// Text message to be sent out.
@@ -53,7 +52,8 @@ struct Opt {
 	channel: String,
 }
 
-fn main() {
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
 	openssl_probe::init_ssl_cert_env_vars();
 	env_logger::init();
 	let opt = Opt::from_args();
@@ -64,5 +64,7 @@ fn main() {
 		.with_botname(opt.botname)
 		.with_emoji(opt.emoji)
 		.with_default_hostname()
-		.execute();
+		.execute()
+		.await?;
+	Ok(())
 }
