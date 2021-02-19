@@ -28,12 +28,12 @@ path = "src/bin.rs"
 [dependencies]
 structopt = "0.3.1"
 hostname = "0.3.1"
-tokio = { version = "1.1", features = ["macros"] }
-openssl = { version = "0.10.24", features = ["vendored"] }
+openssl = { version = "0.10.32", features = ["vendored"] }
 openssl-probe = "0.1.2"
 env_logger = "0.8.1"
 reqwest = {version = "0.11.1", features = ["json"]}
-serde_json = "1.0.40"
+serde_json = "1.0"
 serde = { version = "1.0", default-features = false, features = ["derive"] }
+tokio = { version = "1.2", features = ["rt-multi-thread", "macros"] }
 
 [dev-dependencies]
